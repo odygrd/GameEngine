@@ -4,6 +4,7 @@
 #include "shader.h"
 #include "transform.h"
 #include "camera.h"
+#include "texture.h"
 
 class Game
 {
@@ -19,6 +20,7 @@ private:
 	Shader m_shader;
 	Transform m_transform;
 	Camera m_camera;
+	Texture* m_texture;
 };
 
 #endif
