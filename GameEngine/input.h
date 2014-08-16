@@ -20,14 +20,17 @@ public:
 	inline static bool GetMouseDown(const int button){ return m_pressMouse[button]; }
 	inline static bool GetMouseUp(const int button){ return m_releaseMouse[button]; }
 
-	inline static const vec2& GetMousePosition() { return m_mousePos; }
+	static const vec2& GetCursorPosition();
 	inline static const vec2& GetScrollOffset() { return m_scrollOffset; }
 
-	static void SetCursorVisibility(GLFWwindow* window, bool visible);
+	inline static void SetWindow(GLFWwindow* window) { m_window = window; }
+	static void SetCursorVisibility(bool visible);
+	static void SetCursorPosition(vec2 position);
 
 private:
 	static vec2 m_mousePos;
 	static vec2 m_scrollOffset;
+	static GLFWwindow* m_window;
 
 	static bool m_keyInputs[NUM_KEYS];
 	static bool m_pressKeys[NUM_KEYS];

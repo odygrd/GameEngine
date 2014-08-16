@@ -1,5 +1,6 @@
 #ifndef CAMERA_H
 #define CAMERA_H
+#include "window.h"
 #include <GLM\gtc\matrix_transform.hpp>
 
 #include "common.h"
@@ -35,6 +36,9 @@ private:
 	vec3 m_up; //up vector
 	vec3 m_right; // Right vector
 	mat4 m_viewMatrix;
+
+	static bool mouselocked;
+	vec2 m_cursorStoredPos;
 };
 
 #endif

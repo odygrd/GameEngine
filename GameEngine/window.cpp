@@ -47,7 +47,7 @@ void Window::Create(int width, int height, const std::string& title)
 	glfwSetMouseButtonCallback(m_window, Input::MouseButtonCallback);
 	glfwSetCursorPosCallback(m_window, Input::CursorPosCallback);
 	glfwSetScrollCallback(m_window, Input::CursorScrollCallback);
-
+	Input::SetWindow(m_window);
 	// Initialize GLEW
 	glewExperimental = GL_TRUE; //Turn glewExperimental on to avoid problem fetching function pointers...
 	if (glewInit() != GLEW_OK)
