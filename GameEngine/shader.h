@@ -7,13 +7,14 @@
 #include <memory>
 #include <unordered_map>
 
+#include "material.h"
 #include "common.h"
 
 class Shader
 {
 public:
 	Shader();
-	~Shader();
+	virtual ~Shader();
 
 	void AddVertexShaderFromFile(const std::string& text);
 	void AddGeometryShaderFromFile(const std::string& text);
@@ -31,6 +32,7 @@ public:
 	void SetUniform(const std::string& name, const vec3& value);
 	void SetUniform(const std::string& name, const mat4& value);
 
+	virtual void UpdateUniforms(const mat4& MVPMatrix, Material material);
 private:
 	int m_program;
 	std::vector<int> m_shaders;

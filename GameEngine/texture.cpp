@@ -18,6 +18,16 @@ Texture::Texture(const string& filename, GLenum target, int magFilter, int minFi
 	}
 }
 
+Texture::Texture(int width, int height, BYTE* data, GLenum target, int magFilter, int minFilter, bool genMipmaps)
+{
+	m_target = target;
+	m_magFilter = magFilter;
+	m_minFilter = minFilter;
+	m_mipmaps = genMipmaps;
+	InitTexture(width, height, data, target);
+	SetFiltering();
+}
+
 Texture::~Texture()
 {
 }

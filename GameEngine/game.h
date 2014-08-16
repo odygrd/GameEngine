@@ -5,6 +5,7 @@
 #include "transform.h"
 #include "camera.h"
 #include "texture.h"
+#include "material.h"
 
 class Game
 {
@@ -17,10 +18,11 @@ public:
 	void Render();
 private:
 	Mesh m_mesh;
-	Shader m_shader;
+	Shader* m_shader;
 	Transform m_transform;
 	Camera m_camera;
 	Texture* m_texture;
+	Material m_material;
 };
 
 #endif

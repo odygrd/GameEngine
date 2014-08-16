@@ -5,6 +5,7 @@
 #include "common.h"
 #include "input.h"
 #include "texture.h"
+#include "basicshhader.h"
 
 Game::Game()
 {
@@ -74,11 +75,11 @@ Game::Game()
 
 	m_mesh.AddVertices(data, ARRAY_SIZE(data), indices, ARRAY_SIZE(indices));
 
-	m_shader.AddVertexShaderFromFile("vertexshader.glsl");
-	m_shader.AddFragmentShaderFromFile("fragmentshader.glsl");
-	m_shader.LinkProgram();
-	m_shader.AddUniform("MVPMatrix");
+
 	m_texture = new Texture("./data/textures/wooden.jpg");
+	m_material = Material(m_texture, vec3(1.0f, 0.8f, 0.7f));
+	m_shader = BasicShader::GetInstance();
+	
 	m_transform.SetTranslation(vec3(0.0f, 0.0f, -2.0f));
 	//m_transform.SetScale(vec3(1.3f, 1.3f, 1.3f));
 	//m_transform.SetRotation(40, vec3(0.0, 0.0, 1.0));
@@ -106,9 +107,8 @@ void Game::Update()
 
 void Game::Render()
 {
-	m_shader.Bind();
-	m_shader.SetUniform("MVPMatrix", m_transform.GetModelViewProjectionMatrix(m_camera));
-	m_texture->Bind(0);
+	m_shader->Bind();
+	m_shader->UpdateUniforms(m_transform.GetModelViewProjectionMatrix(m_camera),m_material);
 	RenderEngine::ClearScreen();
 	m_mesh.Draw();
 }

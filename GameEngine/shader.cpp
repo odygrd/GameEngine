@@ -126,6 +126,11 @@ void Shader::SetUniform(const string& uniform, const mat4& value)
 	glUniformMatrix4fv(m_uniforms.at(uniform), 1, GL_FALSE, &(value[0][0]));
 }
 
+void Shader::UpdateUniforms(const mat4& MVPMatrix, Material material)
+{
+
+}
+
 void Shader::CheckShaderError(int shader, int flag, bool isProgram)
 {
 	GLint success;

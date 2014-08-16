@@ -83,22 +83,24 @@ void Camera::Input()
 	{
 		MoveRight(-movAmt);
 	}
-	if (Input::GetKey(GLFW_KEY_UP))
-	{
-		RotateX(rotAmt);
-	}
-	if (Input::GetKey(GLFW_KEY_DOWN))
-	{
-		RotateX(-rotAmt);
-	}
-	if (Input::GetKey(GLFW_KEY_LEFT))
-	{
-		RotateY(rotAmt);
-	}
-	if (Input::GetKey(GLFW_KEY_RIGHT))
-	{
-		RotateY(-rotAmt);
-	}
+
+
+	//if (Input::GetKey(GLFW_KEY_UP))
+	//{
+	//	RotateX(rotAmt);
+	//}
+	//if (Input::GetKey(GLFW_KEY_DOWN))
+	//{
+	//	RotateX(-rotAmt);
+	//}
+	//if (Input::GetKey(GLFW_KEY_LEFT))
+	//{
+	//	RotateY(rotAmt);
+	//}
+	//if (Input::GetKey(GLFW_KEY_RIGHT))
+	//{
+	//	RotateY(-rotAmt);
+	//}
 }
 
 const mat4& Camera::GetViewMatrix()
