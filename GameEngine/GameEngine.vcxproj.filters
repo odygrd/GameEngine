@@ -51,6 +51,9 @@
     <ClCompile Include="material.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="phongshader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -92,12 +95,21 @@
     <ClInclude Include="material.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="phongphader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\fragmentshader.glsl">
       <Filter>Shaders</Filter>
     </None>
     <None Include="shaders\vertexshader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\phongfragshader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\phongvertexshader.glsl">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

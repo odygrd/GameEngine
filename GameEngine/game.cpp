@@ -6,6 +6,7 @@
 #include "input.h"
 #include "texture.h"
 #include "basicshhader.h"
+#include "phongphader.h"
 
 Game::Game()
 {
@@ -77,9 +78,11 @@ Game::Game()
 
 
 	m_texture = new Texture("./data/textures/wooden.jpg");
-	m_material = Material(m_texture, vec3(1.0f, 0.8f, 0.7f));
-	m_shader = BasicShader::GetInstance();
+	m_material = Material(m_texture);
 	
+	m_shader = PhongShader::GetInstance();
+	PhongShader::SetAmbientLight(vec3(0.1f, 0.1f, 0.1f));
+
 	m_transform.SetTranslation(vec3(0.0f, 0.0f, -2.0f));
 	//m_transform.SetScale(vec3(1.3f, 1.3f, 1.3f));
 	//m_transform.SetRotation(40, vec3(0.0, 0.0, 1.0));

@@ -15,13 +15,13 @@ public:
 	}
 
 	virtual void UpdateUniforms(const mat4& MVPMatrix, Material material);
-	void operator = (BasicShader const&){}
+	
 private:
 	BasicShader();
 	~BasicShader();
 
 	BasicShader(BasicShader const&){}
-	
+	void operator = (BasicShader const&){}
 };
 
 #endif
