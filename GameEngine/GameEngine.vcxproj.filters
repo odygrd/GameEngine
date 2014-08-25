@@ -16,6 +16,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{bbdb33de-c39c-41a2-99cd-1ad78e39f5fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Meshes">
+      <UniqueIdentifier>{9b395f44-f00b-4992-a7db-2727abce9537}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="phongshader.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cube.cpp">
+      <Filter>Source Files\Meshes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +102,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="phongphader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>Source Files\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="lighting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

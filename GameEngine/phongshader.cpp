@@ -5,6 +5,7 @@
 
 static BYTE whitePixel[] = { 0xFF, 0xFF, 0xFF, 0xFF };
 vec3 PhongShader::m_ambientLight;
+DirectionalLight PhongShader::m_directionalLight = DirectionalLight(vec3(0, 0, 0),vec3(0, 0, 0), 0);
 
 PhongShader::PhongShader()
 {
@@ -12,16 +13,21 @@ PhongShader::PhongShader()
 	AddFragmentShaderFromFile("phongfragshader.glsl");
 	LinkProgram();
 
-	AddUniform("MVPMatrix");
+	AddUniform("MVP");
+	AddUniform("ModelViewMatrix");
+	AddUniform("NormalMatrix");
 	AddUniform("basecolor");
 	AddUniform("ambientLight");
+	AddUniform("directionalLight.Base.Color");
+	AddUniform("directionalLight.Base.Intensity");
+	AddUniform("directionalLight.Direction");
 }
 
 PhongShader::~PhongShader()
 {
 }
 
-void PhongShader::UpdateUniforms(const mat4& MVPMatrix, Material material)
+void PhongShader::UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, Material material)
 {
 	static Texture WHITE = Texture(1, 1, whitePixel);
 
@@ -32,7 +38,12 @@ void PhongShader::UpdateUniforms(const mat4& MVPMatrix, Material material)
 		WHITE.Bind(0);
 	}
 
-	SetUniform("MVPMatrix", MVPMatrix);
+	SetUniform("MVP", projectionMatrix *modelViewMatrix);
+	SetUniform("ModelViewMatrix", modelViewMatrix);
+	SetUniform("NormalMatrix", mat3(vec3(modelViewMatrix[0]), vec3(modelViewMatrix[1]), vec3(modelViewMatrix[2])));
 	SetUniform("basecolor", material.GetColor());
 	SetUniform("ambientLight", m_ambientLight);
+	SetUniform("directionalLight.Direction", m_directionalLight.GetDirection());
+	SetUniform("directionalLight.Base.Color", m_directionalLight.GetColor());
+	SetUniformf("directionalLight.Base.Intensity", m_directionalLight.GetIntensity());
 }

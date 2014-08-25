@@ -31,8 +31,9 @@ public:
 	void SetUniformf(const std::string& name, float value);
 	void SetUniform(const std::string& name, const vec3& value);
 	void SetUniform(const std::string& name, const mat4& value);
+	void SetUniform(const std::string& name, const mat3& value);
 
-	virtual void UpdateUniforms(const mat4& MVPMatrix, Material material);
+	virtual void UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, Material material);
 private:
 	int m_program;
 	std::vector<int> m_shaders;

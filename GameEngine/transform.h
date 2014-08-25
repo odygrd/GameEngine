@@ -21,6 +21,7 @@ public:
 
 	inline static const mat4& GetProjectionMatrix() { return Transform::m_projectionMatrix; };
 	inline const mat4& GetTransformMatrix() { m_transformMatrix = m_translateMatrix * m_rotateMatrix * m_scaleMatrix; return m_transformMatrix; }
+	inline const mat4& GetModelViewMatrix(Camera& camera) { m_modelViewMatrix = camera.GetViewMatrix()* GetTransformMatrix(); return m_modelViewMatrix; }
 	inline const mat4& GetModelViewProjectionMatrix(Camera& camera){ m_mvpMatrix = m_projectionMatrix *camera.GetViewMatrix()* GetTransformMatrix(); return m_mvpMatrix; };
 	
 	static void SetProjection(float fov, float width, float height, float zNear, float zFar){ m_projectionMatrix = glm::perspective(fov, width / height, zNear, zFar); }
@@ -39,6 +40,7 @@ private:
 	static mat4 m_projectionMatrix;
 	mat4 m_transformMatrix;
 	mat4 m_mvpMatrix;
+	mat4 m_modelViewMatrix;
 };
 
 #endif
