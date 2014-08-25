@@ -1,8 +1,8 @@
 #include <cstdio>
 
 #include "window.h"
-#include "main.h"
-#include "input.h"
+#include "../main.h"
+#include "../core/input.h"
 
 int Window::m_width;
 int Window::m_height;

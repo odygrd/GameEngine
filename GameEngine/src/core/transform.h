@@ -1,7 +1,7 @@
 #ifndef TRANSFORM_H
 #define TRANSFORM_H
 #include "common.h"
-#include "camera.h"
+#include "../rendering/camera.h"
 #include <GLM\gtc\matrix_transform.hpp>
 
 class Transform

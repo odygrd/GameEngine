@@ -1,7 +1,7 @@
 #ifndef MESH_H
 #define MESH_H
 #include "GL\glew.h"
-#include "common.h"
+#include "../core/common.h"
 
 class Vertex
 {

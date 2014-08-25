@@ -2,11 +2,11 @@
 #include <Windows.h>
 
 #include "main.h"
-#include "window.h"
-#include "common.h"
-#include "input.h"
-#include "game.h"
-#include "renderEngine.h"
+#include "rendering/window.h"
+#include "core/common.h"
+#include "core/input.h"
+#include "core/game.h"
+#include "rendering/renderEngine.h"
 
 double Time::m_delta = 1 / FRAME_CAP;
 

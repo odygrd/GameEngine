@@ -1,6 +1,6 @@
 #ifndef _CUBE_H
 #define _CUBE_H
-#include "mesh.h"
+#include "../rendering/mesh.h"
 
 class Cube : public Mesh
 {

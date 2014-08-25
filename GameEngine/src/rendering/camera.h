@@ -3,7 +3,7 @@
 #include "window.h"
 #include <GLM\gtc\matrix_transform.hpp>
 
-#include "common.h"
+#include "../core/common.h"
 
 class Camera
 {

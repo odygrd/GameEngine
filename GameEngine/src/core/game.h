@@ -1,12 +1,13 @@
 #ifndef GAME_H
 #define GAME_H
-#include "mesh.h"
-#include "cube.h"
-#include "shader.h"
+
+#include "../rendering/mesh.h"
+#include "../meshes\cube.h"
+#include "../rendering/shader.h"
+#include "../rendering/camera.h"
+#include "../rendering/texture.h"
+#include "../rendering/material.h"
 #include "transform.h"
-#include "camera.h"
-#include "texture.h"
-#include "material.h"
 
 class Game
 {

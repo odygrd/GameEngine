@@ -79,37 +79,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="basicshader.cpp" />
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="cube.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="input.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="material.cpp" />
-    <ClCompile Include="mesh.cpp" />
-    <ClCompile Include="phongshader.cpp" />
-    <ClCompile Include="renderEngine.cpp" />
-    <ClCompile Include="shader.cpp" />
-    <ClCompile Include="texture.cpp" />
-    <ClCompile Include="window.cpp" />
+    <ClCompile Include="src\Core\game.cpp" />
+    <ClCompile Include="src\Core\input.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Meshes\cube.cpp" />
+    <ClCompile Include="src\Rendering\camera.cpp" />
+    <ClCompile Include="src\Rendering\material.cpp" />
+    <ClCompile Include="src\Rendering\mesh.cpp" />
+    <ClCompile Include="src\Rendering\renderEngine.cpp" />
+    <ClCompile Include="src\Rendering\shader.cpp" />
+    <ClCompile Include="src\Rendering\texture.cpp" />
+    <ClCompile Include="src\Rendering\window.cpp" />
+    <ClCompile Include="src\Shaders\basicshader.cpp" />
+    <ClCompile Include="src\Shaders\phongshader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="basicshhader.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="common.h" />
-    <ClInclude Include="cube.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="input.h" />
-    <ClInclude Include="lighting.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="material.h" />
-    <ClInclude Include="mesh.h" />
-    <ClInclude Include="phongphader.h" />
-    <ClInclude Include="renderEngine.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="transform.h" />
-    <ClInclude Include="window.h" />
+    <ClInclude Include="src\Core\common.h" />
+    <ClInclude Include="src\Core\game.h" />
+    <ClInclude Include="src\Core\input.h" />
+    <ClInclude Include="src\Core\transform.h" />
+    <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\Meshes\cube.h" />
+    <ClInclude Include="src\Rendering\camera.h" />
+    <ClInclude Include="src\Rendering\lighting.h" />
+    <ClInclude Include="src\Rendering\material.h" />
+    <ClInclude Include="src\Rendering\mesh.h" />
+    <ClInclude Include="src\Rendering\renderEngine.h" />
+    <ClInclude Include="src\Rendering\shader.h" />
+    <ClInclude Include="src\Rendering\texture.h" />
+    <ClInclude Include="src\Rendering\window.h" />
+    <ClInclude Include="src\Shaders\basicshhader.h" />
+    <ClInclude Include="src\Shaders\phongphader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\fragmentshader.glsl" />

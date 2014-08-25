@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <GLM\gtx\rotate_vector.hpp>
 #include "camera.h"
-#include "input.h"
-#include "transform.h"
+#include "../core/input.h"
+#include "../core/transform.h"
 
 
 mat4 Transform::m_projectionMatrix = glm::perspective(FOV, WIDTH / HEIGHT, ZNEAR, ZFAR);

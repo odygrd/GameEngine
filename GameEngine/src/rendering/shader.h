@@ -8,7 +8,7 @@
 #include <unordered_map>
 
 #include "material.h"
-#include "common.h"
+#include "../core/common.h"
 
 class Shader
 {

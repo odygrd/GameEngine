@@ -1,12 +1,13 @@
-#include <GLM\gtc\matrix_transform.hpp>
+#include "../rendering/renderEngine.h"
+#include "../rendering/texture.h"
+#include "../shaders/basicshhader.h"
+#include "../shaders/phongphader.h"
 #include "game.h"
-#include "renderEngine.h"
 #include "transform.h"
 #include "common.h"
 #include "input.h"
-#include "texture.h"
-#include "basicshhader.h"
-#include "phongphader.h"
+
+#include <GLM\gtc\matrix_transform.hpp>
 
 Game::Game()
 {

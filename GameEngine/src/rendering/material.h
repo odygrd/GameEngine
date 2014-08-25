@@ -1,7 +1,7 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 #include "texture.h"
-#include "common.h"
+#include "../core/common.h"
 
 class Material
 {

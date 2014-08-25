@@ -1,10 +1,10 @@
 #ifndef PHONGSHADER_H
 #define PHONGSHADER_H
 
-#include "shader.h"
-#include "material.h"
-#include "common.h"
-#include "lighting.h"
+#include "../rendering/shader.h"
+#include "../rendering/material.h"
+#include "../core/common.h"
+#include "../rendering/lighting.h"
 
 class PhongShader : public Shader
 {

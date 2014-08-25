@@ -1,7 +1,7 @@
 #include "phongphader.h"
 
-#include "texture.h"
-#include "common.h"
+#include "../rendering/texture.h"
+#include "../core/common.h"
 
 static BYTE whitePixel[] = { 0xFF, 0xFF, 0xFF, 0xFF };
 vec3 PhongShader::m_ambientLight;

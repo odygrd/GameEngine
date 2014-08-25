@@ -1,9 +1,9 @@
 #ifndef BASICSHADER_H
 #define BASICSHADER_H
 
-#include "shader.h"
-#include "material.h"
-#include "common.h"
+#include "../rendering/shader.h"
+#include "../rendering/material.h"
+#include "../core/common.h"
 
 class BasicShader : public Shader
 {
