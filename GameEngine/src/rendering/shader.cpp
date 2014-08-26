@@ -96,44 +96,63 @@ void Shader::AddFragmentShaderFromFile(const string& text)
 	AddFragmentShader(*LoadShader(text));
 }
 
-void Shader::AddUniform(const string& uniform)
+void Shader::SetUniform(const std::string& name, float x, float y, float z)
 {
-	int location = glGetUniformLocation(m_program, uniform.c_str());
-	if (location == INVALID_VALUE)
-	{
-		printf("Error finding %s uniform location\n\n", uniform.c_str());
-	}
-	m_uniforms.emplace(uniform, location);
+  GLint loc = GetUniformLocation(name);
+  glUniform3f(loc,x,y,z);
 }
 
-void Shader::SetUniformi(const string& uniform, int value)
+void Shader::SetUniform(const std::string& name, const vec3& v)
 {
-	glUniform1i(m_uniforms.at(uniform), value);
+  this->SetUniform(name,v.x,v.y,v.z);
 }
 
-void Shader::SetUniformf(const string& uniform, float value)
+void Shader::SetUniform(const std::string& name, const vec4& v)
 {
-	glUniform1f(m_uniforms.at(uniform), value);
+  GLint loc = GetUniformLocation(name);
+  glUniform4f(loc,v.x,v.y,v.z,v.w);
 }
 
-void Shader::SetUniform(const string& uniform, const vec3& value)
+void Shader::SetUniform(const std::string& name, const vec2& v)
 {
-	glUniform3f(m_uniforms.at(uniform), value.x, value.y, value.z);
+  GLint loc = GetUniformLocation(name);
+  glUniform2f(loc,v.x,v.y);
 }
 
-void Shader::SetUniform(const string& uniform, const mat4& value)
+void Shader::SetUniform(const std::string& name, const mat4& m)
 {
-	glUniformMatrix4fv(m_uniforms.at(uniform), 1, GL_FALSE, &(value[0][0]));
+  GLint loc = GetUniformLocation(name);
+  glUniformMatrix4fv(loc, 1, GL_FALSE, &m[0][0]);
 }
 
-void Shader::SetUniform(const string& uniform, const mat3& value)
+void Shader::SetUniform(const std::string& name, const mat3& m)
 {
-	glUniformMatrix3fv(m_uniforms.at(uniform), 1, GL_FALSE, &(value[0][0]));
+  GLint loc = GetUniformLocation(name);
+  glUniformMatrix3fv(loc, 1, GL_FALSE, &m[0][0]);
 }
 
-void Shader::UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, const vec3& cameraPosition, const Material& material)
+void Shader::SetUniform(const std::string& name, float val)
 {
+  GLint loc = GetUniformLocation(name);
+  glUniform1f(loc, val);
+}
 
+void Shader::SetUniform(const std::string& name, int val)
+{
+  GLint loc = GetUniformLocation(name);
+  glUniform1i(loc, val);
+}
+
+void Shader::SetUniform(const std::string& name, GLuint val)
+{
+  GLint loc = GetUniformLocation(name);
+  glUniform1ui(loc, val);
+}
+
+void Shader::SetUniform(const std::string& name, bool val)
+{
+  int loc = GetUniformLocation(name);
+  glUniform1i(loc, val);
 }
 
 void Shader::CheckShaderError(int shader, int flag, bool isProgram)
@@ -196,3 +215,21 @@ std::shared_ptr<std::string> Shader::LoadShader(const std::string& fileName)
 
 	return output;
 };
+
+GLint Shader::GetUniformLocation(const std::string& name)
+{
+
+	auto pos = m_uniformLocations.find(name);
+
+	if (pos == m_uniformLocations.end()) {
+		m_uniformLocations[name] = glGetUniformLocation(m_program, name.c_str());
+	}
+
+	return m_uniformLocations[name];
+}
+
+
+void Shader::UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, const vec3& cameraPosition, const Material& material)
+{
+
+}

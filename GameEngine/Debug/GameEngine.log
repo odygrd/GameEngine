@@ -1,4 +1,4 @@
-﻿Build started 8/26/2014 5:05:27 AM.
+﻿Build started 8/26/2014 10:12:51 AM.
      1>Project "C:\Users\Ody\Documents\Visual Studio 2013\Projects\GameEngine\GameEngine\GameEngine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\Core\game.cpp
@@ -20,9 +20,10 @@
          Debug\window.obj
          Debug\basicshader.obj
          Debug\phongshader.obj
+         Debug\test.obj
          GameEngine.vcxproj -> C:\Users\Ody\Documents\Visual Studio 2013\Projects\GameEngine\Debug\GameEngine.exe
      1>Done Building Project "C:\Users\Ody\Documents\Visual Studio 2013\Projects\GameEngine\GameEngine\GameEngine.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.83
+Time Elapsed 00:00:00.77

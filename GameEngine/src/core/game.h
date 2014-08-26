@@ -29,7 +29,9 @@ private:
 	Camera m_camera;
 	Texture* m_texture[2];
 	Material* m_material[2];
+
 	PointLight* m_pLights;
+	SpotLight* m_sLights;
 };
 
 #endif

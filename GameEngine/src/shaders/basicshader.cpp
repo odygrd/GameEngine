@@ -6,12 +6,9 @@ static BYTE whitePixel[] = { 0xFF, 0xFF, 0xFF, 0xFF };
 
 BasicShader::BasicShader()
 {
-	AddVertexShaderFromFile("vertexshader.glsl");
-	AddFragmentShaderFromFile("fragmentshader.glsl");
+	AddVertexShaderFromFile("../data/shaders/vertexshader.glsl");
+	AddFragmentShaderFromFile("../data/shaders/fragmentshader.glsl");
 	LinkProgram();
-
-	AddUniform("MVPMatrix");
-	AddUniform("color");
 }
 
 BasicShader::~BasicShader()

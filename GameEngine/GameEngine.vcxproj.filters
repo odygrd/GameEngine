@@ -72,6 +72,9 @@
     <ClCompile Include="src\meshes\plane.cpp">
       <Filter>Source Files\Meshes</Filter>
     </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Meshes\cube.h">
@@ -127,16 +130,16 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaders\fragmentshader.glsl">
+    <None Include="data\shaders\simplevertex.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaders\vertexshader.glsl">
+    <None Include="data\shaders\phongfragment.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaders\phongfragshader.glsl">
+    <None Include="data\shaders\phongvertex.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaders\phongvertexshader.glsl">
+    <None Include="data\shaders\simplefragment.glsl">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

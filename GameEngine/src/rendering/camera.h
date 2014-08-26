@@ -20,9 +20,13 @@ public:
 	const mat4& GetViewMatrix();
 
 	inline const vec3& GetPosition() { return m_position; };
-	inline const vec3& GetDirection() { return m_direction; };
-	inline const vec3& GetUp(){ return m_up; };
-	inline const vec3& GetRight(){ return m_right; }
+	inline const vec3& GetDirection() { m_direction = vec3(cos(m_verticalAngle) * sin(m_horizontalAngle), sin(m_verticalAngle), cos(m_verticalAngle) * cos(m_horizontalAngle)); return m_direction; };
+	inline const vec3& GetRight() { m_right = vec3(sin(m_horizontalAngle - 3.14f / 2.0f), 0, cos(m_horizontalAngle - 3.14f / 2.0f)); return m_right; }
+	inline const vec3& GetUp() {
+		m_direction = vec3(cos(m_verticalAngle) * sin(m_horizontalAngle), sin(m_verticalAngle), cos(m_verticalAngle) * cos(m_horizontalAngle));
+		m_right = vec3(sin(m_horizontalAngle - 3.14f / 2.0f), 0, cos(m_horizontalAngle - 3.14f / 2.0f));
+		return glm::cross(m_right, m_direction);
+	};
 
 	inline void SetPosition(const vec3& position){ m_position = position; }
 	inline void SetDirection(const vec3& direction){ m_direction = direction; }

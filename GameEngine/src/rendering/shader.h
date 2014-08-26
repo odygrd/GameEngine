@@ -22,26 +22,31 @@ public:
 	void AddVertexShader(const std::string& text);
 	void AddGeometryShader(const std::string& text);
 	void AddFragmentShader(const std::string& text);
-	void AddUniform(const std::string& uniform);
 
 	void Bind();
 	void LinkProgram();
 
-	void SetUniformi(const std::string& name, int value);
-	void SetUniformf(const std::string& name, float value);
-	void SetUniform(const std::string& name, const vec3& value);
-	void SetUniform(const std::string& name, const mat4& value);
-	void SetUniform(const std::string& name, const mat3& value);
+	void SetUniform(const std::string& name, float x, float y, float z);
+	void SetUniform(const std::string& name, const vec3& v);
+	void SetUniform(const std::string& name, const vec4& v);
+	void SetUniform(const std::string& name, const vec2& v);
+	void SetUniform(const std::string& name, const mat4& m);
+	void SetUniform(const std::string& name, const mat3& m);
+	void SetUniform(const std::string& name, float val);
+	void SetUniform(const std::string& name, int val);
+	void SetUniform(const std::string& name, GLuint val);
+	void SetUniform(const std::string& name, bool val);
 
 	virtual void UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, const vec3& cameraPosition, const Material& material);
 private:
 	int m_program;
 	std::vector<int> m_shaders;
-
-	static void CheckShaderError(int shader, int flag, bool isProgram);
+	std::unordered_map<std::string, GLint> m_uniformLocations;
 	static std::shared_ptr<std::string> LoadShader(const std::string& fileName);
-	std::unordered_map<std::string, int> m_uniforms; //hash table
+	
+	static void CheckShaderError(int shader, int flag, bool isProgram);
 	void AddShader(const std::string& text, int type);
+	GLint Shader::GetUniformLocation(const std::string& name);
 };
 
 #endif

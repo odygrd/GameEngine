@@ -93,6 +93,7 @@
     <ClCompile Include="src\Rendering\window.cpp" />
     <ClCompile Include="src\Shaders\basicshader.cpp" />
     <ClCompile Include="src\Shaders\phongshader.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\common.h" />
@@ -114,10 +115,10 @@
     <ClInclude Include="src\Shaders\phongphader.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaders\fragmentshader.glsl" />
-    <None Include="shaders\phongfragshader.glsl" />
-    <None Include="shaders\phongvertexshader.glsl" />
-    <None Include="shaders\vertexshader.glsl" />
+    <None Include="data\shaders\phongfragment.glsl" />
+    <None Include="data\shaders\phongvertex.glsl" />
+    <None Include="data\shaders\simplefragment.glsl" />
+    <None Include="data\shaders\simplevertex.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
