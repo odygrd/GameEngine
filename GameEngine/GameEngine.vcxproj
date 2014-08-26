@@ -83,6 +83,7 @@
     <ClCompile Include="src\Core\input.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Meshes\cube.cpp" />
+    <ClCompile Include="src\meshes\plane.cpp" />
     <ClCompile Include="src\Rendering\camera.cpp" />
     <ClCompile Include="src\Rendering\material.cpp" />
     <ClCompile Include="src\Rendering\mesh.cpp" />
@@ -100,6 +101,7 @@
     <ClInclude Include="src\Core\transform.h" />
     <ClInclude Include="src\main.h" />
     <ClInclude Include="src\Meshes\cube.h" />
+    <ClInclude Include="src\meshes\plane.h" />
     <ClInclude Include="src\Rendering\camera.h" />
     <ClInclude Include="src\Rendering\lighting.h" />
     <ClInclude Include="src\Rendering\material.h" />

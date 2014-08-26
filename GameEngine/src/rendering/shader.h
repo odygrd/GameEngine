@@ -33,7 +33,7 @@ public:
 	void SetUniform(const std::string& name, const mat4& value);
 	void SetUniform(const std::string& name, const mat3& value);
 
-	virtual void UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, Material material);
+	virtual void UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, const vec3& cameraPosition, const Material& material);
 private:
 	int m_program;
 	std::vector<int> m_shaders;

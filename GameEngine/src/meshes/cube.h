@@ -7,7 +7,6 @@ class Cube : public Mesh
 public:
 	Cube();
 	virtual ~Cube();
-private:
 
 };
 
