@@ -1,4 +1,4 @@
-#include "phongphader.h"
+#include "phongshader.h"
 #include <GLM\gtc\matrix_inverse.hpp>
 
 #include "../rendering/texture.h"

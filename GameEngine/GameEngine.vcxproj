@@ -79,9 +79,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\core.cpp" />
     <ClCompile Include="src\Core\game.cpp" />
     <ClCompile Include="src\Core\input.cpp" />
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Meshes\cube.cpp" />
     <ClCompile Include="src\meshes\plane.cpp" />
     <ClCompile Include="src\Rendering\camera.cpp" />
@@ -93,14 +93,14 @@
     <ClCompile Include="src\Rendering\window.cpp" />
     <ClCompile Include="src\Shaders\basicshader.cpp" />
     <ClCompile Include="src\Shaders\phongshader.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="src\testgame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\common.h" />
+    <ClInclude Include="src\core\core.h" />
     <ClInclude Include="src\Core\game.h" />
     <ClInclude Include="src\Core\input.h" />
     <ClInclude Include="src\Core\transform.h" />
-    <ClInclude Include="src\main.h" />
     <ClInclude Include="src\Meshes\cube.h" />
     <ClInclude Include="src\meshes\plane.h" />
     <ClInclude Include="src\Rendering\camera.h" />
@@ -112,7 +112,9 @@
     <ClInclude Include="src\Rendering\texture.h" />
     <ClInclude Include="src\Rendering\window.h" />
     <ClInclude Include="src\Shaders\basicshhader.h" />
-    <ClInclude Include="src\Shaders\phongphader.h" />
+    <ClInclude Include="src\Shaders\phongshader.h" />
+    <ClInclude Include="src\testgame.h" />
+    <ClInclude Include="test.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\shaders\phongfragment.glsl" />

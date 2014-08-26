@@ -7,24 +7,27 @@
 class Window
 {
 public:
-	static void Create(int width, int height, const std::string& title);
-	static void Update();
-	static void Dispose();
+	Window(int width, int height, const std::string& title);
+	~Window();
 
-	static bool IsCloseRequested();
-	static void SetFullScreen(bool value);
+	void Update();
+
+	inline bool GetIsCloseRequest() { return m_closeRequest; };
+	void SetFullScreen(bool value);
 
 	static void error_callback(int error, const char* description);
 	//static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
-	inline static int GetWidth() { return m_width; }
-	inline static int GetHeight() { return m_height; }
-	inline static const std::string& GetTitle() { return m_title; }
+	inline  int GetWidth() { return m_width; }
+	inline  int GetHeight() { return m_height; }
+	inline  const std::string& GetTitle() { return m_title; }
 private:
-	static int m_width;
-	static int m_height;
-	static std::string m_title;
-	static GLFWwindow* m_window;
+	int m_width;
+	int m_height;
+	bool m_closeRequest;
+	std::string m_title;
+	GLFWwindow* m_window;
+
 };
 
 #endif

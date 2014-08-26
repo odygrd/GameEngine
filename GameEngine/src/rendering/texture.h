@@ -8,16 +8,14 @@
 class Texture
 {
 public:
+	Texture(){};
 	Texture(const std::string& filename, GLenum target = GL_TEXTURE_2D , int magFilter = 3, int minFilter = 8, bool genMipMaps = true);
 	Texture::Texture(int width, int height, BYTE* data, GLenum target = GL_TEXTURE_2D, int magFilter = 3, int minFilter = 8, bool genMipMaps = true);
-	~Texture();
 
 	void Texture::SetSamplerParameter(GLenum parameter, GLenum value); //Specify a custon random parameter
 	void Texture::Bind(GLenum textureUnit);
 	void Texture::ReleaseTexture();
 private:
-	static Texture* m_lastBinded;
-
 	int m_width;
 	int m_height;
 	int m_bitesPerPixel;

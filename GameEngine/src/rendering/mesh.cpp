@@ -12,6 +12,7 @@ Mesh::Mesh()
 Mesh::~Mesh()
 {
 	glDeleteBuffers(1, &m_vbo);
+	glDeleteVertexArrays(1, &m_vao);
 }
 
 void Mesh::AddVertices(Vertex* vertices, unsigned int vertSize, int* indices, unsigned int indexSize, bool calcNormals)

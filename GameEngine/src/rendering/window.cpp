@@ -1,20 +1,11 @@
 #include <cstdio>
 
 #include "window.h"
-#include "../main.h"
 #include "../core/input.h"
 
-int Window::m_width;
-int Window::m_height;
-std::string Window::m_title;
-GLFWwindow* Window::m_window;
 
-void Window::Create(int width, int height, const std::string& title)
+Window::Window(int width, int height, const std::string& title) : m_closeRequest(false), m_width(width), m_height(height), m_title(title)
 {
-	Window::m_width = width;
-	Window::m_height = height;
-	Window::m_title = title;
-
 	glfwSetErrorCallback(error_callback);
 
 	if (!glfwInit())
@@ -38,8 +29,7 @@ void Window::Create(int width, int height, const std::string& title)
 	if (!m_window)
 	{
 		printf("Failed to initialize window\n");
-		Window::Dispose();
-		exit(EXIT_FAILURE);
+		m_closeRequest = true;
 	}
 	//glfwSetWindowSize(m_window, width, height);
 	glfwMakeContextCurrent(m_window);
@@ -61,22 +51,10 @@ void Window::Update()
 {
 	if (glfwWindowShouldClose(m_window))
 	{
-		Window::Dispose();
-		exit(EXIT_SUCCESS);
+		m_closeRequest = true;
 	}
 
 	glfwSwapBuffers(m_window);
-}
-
-void Window::Dispose()
-{
-	glfwDestroyWindow(m_window);
-	glfwTerminate();
-}
-
-bool Window::IsCloseRequested()
-{
-	return false;
 }
 
 void Window::SetFullScreen(bool value)
@@ -89,5 +67,9 @@ void Window::error_callback(int error, const char* description)
 	fputs(description, stderr);
 }
 
-
+Window::~Window()
+{
+	glfwDestroyWindow(m_window);
+	glfwTerminate();
+}
 

@@ -73,7 +73,7 @@ class SpotLight : public PointLight
 {
 public:
 	SpotLight():m_direction(vec3(0.0f,0.0f,0.0f)),m_cutoff(0.0f){};
-	SpotLight(vec3 position, vec3 direction, vec3 color, float intensity, float cutoff, float range, float constantAttenuation = 0, float linearAttenuation = 0, float exponentAttenuation = 1) :
+	SpotLight(vec3 position, vec3 direction, vec3 color, float intensity, float cutoff, float range, float constantAttenuation = 0, float linearAttenuation = 0, float exponentAttenuation = 0.1) :
 		PointLight(position, color, range, intensity, constantAttenuation, linearAttenuation, exponentAttenuation), m_direction(glm::normalize(direction)), m_cutoff(cutoff){};
 	inline const vec3& GetDirection() const { return m_direction; }
 	inline float GetCutOff() {return m_cutoff; }

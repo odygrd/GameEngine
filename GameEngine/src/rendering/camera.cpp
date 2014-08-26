@@ -36,7 +36,7 @@ void Camera::Input()
 	if (Input::GetMouseDown(GLFW_MOUSE_BUTTON_1))
 	{
 		m_cursorStoredPos = Input::GetCursorPosition();
-		vec2 centerPos = vec2((float)Window::GetWidth()/ 2.0f, (float)Window::GetHeight() / 2.0f);
+		vec2 centerPos = vec2((float)WIDTH / 2.0f, (float)WIDTH / 2.0f);
 		Input::SetCursorPosition(centerPos);
 		Input::SetCursorVisibility(false);
 		mouselocked = true;
@@ -51,7 +51,7 @@ void Camera::Input()
 
 	if (mouselocked)
 	{
-		vec2 centerPos = vec2((float)Window::GetWidth() / 2.0f, (float)Window::GetHeight() / 2.0f);
+		vec2 centerPos = vec2((float)WIDTH / 2.0f, (float)WIDTH / 2.0f);
 		vec2 currentPos = Input::GetCursorPosition();
 		vec2 deltaPos = centerPos - currentPos;
 

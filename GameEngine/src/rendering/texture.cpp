@@ -3,8 +3,6 @@
 
 using namespace std;
 
-Texture* Texture::m_lastBinded = NULL;
-
 Texture::Texture(const string& filename, GLenum target, int magFilter, int minFilter, bool genMipmaps)
 {
 	m_target = target;
@@ -26,10 +24,6 @@ Texture::Texture(int width, int height, BYTE* data, GLenum target, int magFilter
 	m_mipmaps = genMipmaps;
 	InitTexture(width, height, data, target);
 	SetFiltering();
-}
-
-Texture::~Texture()
-{
 }
 
 bool Texture::LoadTexture(const string& filename)
@@ -129,12 +123,10 @@ void Texture::SetSamplerParameter(GLenum parameter, GLenum value)
 
 void Texture::Bind(GLenum textureUnit)
 {
-	if (m_lastBinded != this)
-	{
 		glActiveTexture(GL_TEXTURE0 + textureUnit);
 		glBindTexture(m_target, m_textureId);
 		glBindSampler(textureUnit, m_samplerId);
-	}
+
 }
 
 void Texture::ReleaseTexture()

@@ -10,28 +10,23 @@
 #include "../rendering/material.h"
 #include "transform.h"
 #include "../rendering/lighting.h"
+#include "..\rendering\renderEngine.h"
 
 class Game
 {
 public:
 	Game();
-	~Game();
+	virtual ~Game();
 
-	void Input();
-	void Update();
-	void Render();
+	virtual void Init(const Window& window);
+	//virtual void ProcessInput(const Input& input, float delta);
+	virtual void ProcessInput(){};
+	virtual void Update(float delta);
+	virtual void Render(RenderEngine* renderEngine);
+
 private:
-	Mesh m_mesh;
-	Cube m_cube;
-	Plane m_plane;
-	Shader* m_shader;
-	Transform m_transform;
-	Camera m_camera;
-	Texture* m_texture[2];
-	Material* m_material[2];
-
-	PointLight* m_pLights;
-	SpotLight* m_sLights;
+	Game(Game& game){}
+	void operator=(Game& game){}
 };
 
 #endif

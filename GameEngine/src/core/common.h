@@ -12,13 +12,13 @@ typedef glm::mat3 mat3;
 typedef glm::mat4 mat4;
 
 //Definitions
-static const bool IGNORE_FRAME_CAP = false;
+static const bool IGNORE_FRAME_CAP = true;
 static const bool WINDOW_RESIZABLE = false;
 static const bool FULLSCREEN = false;
 
 static const float WIDTH = 1280;
 static const float HEIGHT = 720;
-static const double FRAME_CAP = 120;
+static const double FRAME_CAP = 1000;
 static const int SAMPLES = 4;
 
 static const float FOV = 50.0f;
