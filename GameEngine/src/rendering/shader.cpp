@@ -229,7 +229,6 @@ GLint Shader::GetUniformLocation(const std::string& name)
 }
 
 
-void Shader::UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, const vec3& cameraPosition, const Material& material)
+void Shader::UpdateUniforms(const mat4& modelMatrix, const Material& material)
 {
-
 }

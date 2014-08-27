@@ -1,6 +1,5 @@
 #ifndef LIGHTING_H
 #define LIGHTING_H
-#include "../core/common.h"
 
 class BaseLight
 {

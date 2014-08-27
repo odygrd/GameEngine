@@ -1,13 +1,12 @@
 #include "basicshhader.h"
 #include "../rendering/texture.h"
-#include "../core/common.h"
 
 static BYTE whitePixel[] = { 0xFF, 0xFF, 0xFF, 0xFF };
 
 BasicShader::BasicShader()
 {
-	AddVertexShaderFromFile("../data/shaders/vertexshader.glsl");
-	AddFragmentShaderFromFile("../data/shaders/fragmentshader.glsl");
+	AddVertexShaderFromFile("../data/shaders/simplevertex.glsl");
+	AddFragmentShaderFromFile("../data/shaders/simplefragment.glsl");
 	LinkProgram();
 }
 

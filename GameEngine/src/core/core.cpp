@@ -2,7 +2,6 @@
 #include <Windows.h>
 
 #include "core.h"
-
 #include "common.h"
 #include "input.h"
 
@@ -16,7 +15,7 @@ Core::Core(Window* window, RenderEngine* renderEngine, Game* game, double framer
 	m_game(game)
 {
 	Time::SetDelta(m_frameTime);
-	m_game->Init(*m_window);
+	m_game->Init();
 };
 
 void Core::Start()
@@ -49,7 +48,7 @@ void Core::Start()
 		//if 1 second passed print and reset
 		if (frameCounter >= 1.0f)
 		{
-			//printf("%i\n", frames);
+			printf("%i\n", frames);
 			frames = 0;
 			frameCounter = 0;
 		}
@@ -62,7 +61,8 @@ void Core::Start()
 			}
 
 			Input::Update();
-			m_game->ProcessInput();
+			m_renderEngine->Input();
+			m_game->ProcessInput((float)m_frameTime);
 			m_game->Update((float)m_frameTime);
 			render = true;
 			unprocessedTime -= m_frameTime;
@@ -70,7 +70,8 @@ void Core::Start()
 
 		if (render || IGNORE_FRAME_CAP)
 		{
-			m_game->Render(m_renderEngine);
+			m_renderEngine->Render(&m_game->GetRootObject());
+			//m_game->Render(m_renderEngine);
 			m_window->Update();
 			frames++;
 		}

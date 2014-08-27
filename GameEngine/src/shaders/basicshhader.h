@@ -3,7 +3,6 @@
 
 #include "../rendering/shader.h"
 #include "../rendering/material.h"
-#include "../core/common.h"
 
 class BasicShader : public Shader
 {

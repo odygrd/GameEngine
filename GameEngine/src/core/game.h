@@ -1,32 +1,24 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "../rendering/mesh.h"
-#include "../meshes/cube.h"
-#include "../meshes/plane.h"
-#include "../rendering/shader.h"
-#include "../rendering/camera.h"
-#include "../rendering/texture.h"
-#include "../rendering/material.h"
-#include "transform.h"
-#include "../rendering/lighting.h"
-#include "..\rendering\renderEngine.h"
+#include "gameobject.h"
 
 class Game
 {
 public:
-	Game();
-	virtual ~Game();
+	Game(){};
+	virtual ~Game(){};
 
-	virtual void Init(const Window& window);
-	//virtual void ProcessInput(const Input& input, float delta);
-	virtual void ProcessInput(){};
-	virtual void Update(float delta);
-	virtual void Render(RenderEngine* renderEngine);
-
+	virtual void Init(){};
+	void ProcessInput(float delta){ m_root.InputAll(delta); }
+	void Update(float delta){ m_root.UpdateAll(delta); }
+	/// void Render(RenderEngine* renderEngine){ m_root.RenderAll(m_shader, renderEngine); };
+	inline GameObject& GetRootObject() { return m_root; }
 private:
 	Game(Game& game){}
 	void operator=(Game& game){}
+
+	GameObject m_root;
 };
 
 #endif

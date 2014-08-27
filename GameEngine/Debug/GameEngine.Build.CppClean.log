@@ -1,12 +1,11 @@
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\vc120.pdb
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\vc120.idb
-c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\game.obj
+c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\gameobject.obj
+c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\core.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\input.obj
-c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\main.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\cube.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\plane.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\camera.obj
-c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\material.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\mesh.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\renderengine.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\shader.obj
@@ -14,7 +13,7 @@ c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\t
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\window.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\basicshader.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\phongshader.obj
-c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\test.obj
+c:\users\ody\documents\visual studio 2013\projects\gameengine\gameengine\debug\testgame.obj
 c:\users\ody\documents\visual studio 2013\projects\gameengine\debug\gameengine.ilk
 c:\users\ody\documents\visual studio 2013\projects\gameengine\debug\gameengine.exe
 c:\users\ody\documents\visual studio 2013\projects\gameengine\debug\gameengine.pdb

@@ -1,6 +1,6 @@
 #ifndef CAMERA_H
 #define CAMERA_H
-#include "window.h"
+
 #include <GLM\gtc\matrix_transform.hpp>
 
 #include "../core/common.h"
@@ -8,7 +8,7 @@
 class Camera
 {
 public:
-	Camera(vec3 position = vec3(0.0f, 0.0f, 1.0f));
+	Camera(float fov, float aspect, float zNear, float zFar);
 	~Camera();
 
 	void Input();
@@ -17,7 +17,8 @@ public:
 	void RotateY(float angle);
 	void RotateX(float angle);
 
-	const mat4& GetViewMatrix();
+	const mat4& GetViewMatrix() const { return m_viewMatrix; }
+	const mat4& GetProjectionMatrix() const { return m_projectionMatrix; }
 
 	inline const vec3& GetPosition() { return m_position; };
 	inline const vec3& GetDirection() { m_direction = vec3(cos(m_verticalAngle) * sin(m_horizontalAngle), sin(m_verticalAngle), cos(m_verticalAngle) * cos(m_horizontalAngle)); return m_direction; };
@@ -40,9 +41,12 @@ private:
 	vec3 m_up; //up vector
 	vec3 m_right; // Right vector
 	mat4 m_viewMatrix;
+	mat4 m_projectionMatrix;
 
-	static bool mouselocked;
+	bool m_mouselocked;
 	vec2 m_cursorStoredPos;
+
+	void CalculateDirection();
 };
 
 #endif

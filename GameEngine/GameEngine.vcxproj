@@ -79,13 +79,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\gameobject.cpp" />
     <ClCompile Include="src\core\core.cpp" />
-    <ClCompile Include="src\Core\game.cpp" />
     <ClCompile Include="src\Core\input.cpp" />
     <ClCompile Include="src\Meshes\cube.cpp" />
     <ClCompile Include="src\meshes\plane.cpp" />
     <ClCompile Include="src\Rendering\camera.cpp" />
-    <ClCompile Include="src\Rendering\material.cpp" />
     <ClCompile Include="src\Rendering\mesh.cpp" />
     <ClCompile Include="src\Rendering\renderEngine.cpp" />
     <ClCompile Include="src\Rendering\shader.cpp" />
@@ -93,14 +92,17 @@
     <ClCompile Include="src\Rendering\window.cpp" />
     <ClCompile Include="src\Shaders\basicshader.cpp" />
     <ClCompile Include="src\Shaders\phongshader.cpp" />
-    <ClCompile Include="src\testgame.cpp" />
+    <ClCompile Include="src\game\testgame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\component.h" />
+    <ClInclude Include="src\core\gameobject.h" />
     <ClInclude Include="src\Core\common.h" />
     <ClInclude Include="src\core\core.h" />
     <ClInclude Include="src\Core\game.h" />
     <ClInclude Include="src\Core\input.h" />
     <ClInclude Include="src\Core\transform.h" />
+    <ClInclude Include="src\game\meshrenderer.h" />
     <ClInclude Include="src\Meshes\cube.h" />
     <ClInclude Include="src\meshes\plane.h" />
     <ClInclude Include="src\Rendering\camera.h" />
@@ -113,8 +115,7 @@
     <ClInclude Include="src\Rendering\window.h" />
     <ClInclude Include="src\Shaders\basicshhader.h" />
     <ClInclude Include="src\Shaders\phongshader.h" />
-    <ClInclude Include="src\testgame.h" />
-    <ClInclude Include="test.h" />
+    <ClInclude Include="src\game\testgame.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\shaders\phongfragment.glsl" />

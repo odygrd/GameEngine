@@ -6,9 +6,9 @@
 #include <vector>
 #include <memory>
 #include <unordered_map>
+#include "renderEngine.h"
 
-#include "material.h"
-#include "../core/common.h"
+class Material;
 
 class Shader
 {
@@ -37,7 +37,10 @@ public:
 	void SetUniform(const std::string& name, GLuint val);
 	void SetUniform(const std::string& name, bool val);
 
-	virtual void UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, const vec3& cameraPosition, const Material& material);
+	inline void SetRenderEngine(RenderEngine* renderEngine){ m_renderEngine = renderEngine; };
+	inline RenderEngine* GetRenderEngine(){ return m_renderEngine; };
+	
+	virtual void UpdateUniforms(const mat4& modelMatrix, const Material& material);
 private:
 	int m_program;
 	std::vector<int> m_shaders;
@@ -47,6 +50,8 @@ private:
 	static void CheckShaderError(int shader, int flag, bool isProgram);
 	void AddShader(const std::string& text, int type);
 	GLint Shader::GetUniformLocation(const std::string& name);
+
+	RenderEngine* m_renderEngine;
 };
 
 #endif

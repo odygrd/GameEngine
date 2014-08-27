@@ -36,12 +36,6 @@
     <ClCompile Include="src\Core\input.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\game.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Rendering\material.cpp">
-      <Filter>Source Files\Rendering</Filter>
-    </ClCompile>
     <ClCompile Include="src\Rendering\mesh.cpp">
       <Filter>Source Files\Rendering</Filter>
     </ClCompile>
@@ -72,7 +66,10 @@
     <ClCompile Include="src\core\core.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\testgame.cpp">
+    <ClCompile Include="src\core\gameobject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\testgame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -122,17 +119,23 @@
     <ClInclude Include="src\meshes\plane.h">
       <Filter>Source Files\Meshes</Filter>
     </ClInclude>
-    <ClInclude Include="test.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\core\core.h">
       <Filter>Source Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Shaders\phongshader.h">
       <Filter>Source Files\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="src\testgame.h">
+    <ClInclude Include="src\core\gameobject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\testgame.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\meshrenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\component.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

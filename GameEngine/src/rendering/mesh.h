@@ -25,7 +25,7 @@ class Mesh
 {
 public:
 	Mesh();
-	~Mesh();
+	virtual ~Mesh();
 
 	void AddVertices(Vertex* vertices, unsigned int vertSize, int* indices, unsigned int indexSize, bool calcNormals = false);
 	virtual void Draw();

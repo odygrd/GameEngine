@@ -3,7 +3,6 @@
 
 #include "../rendering/shader.h"
 #include "../rendering/material.h"
-#include "../core/common.h"
 #include "../rendering/lighting.h"
 
 class PhongShader : public Shader
@@ -15,7 +14,7 @@ public:
 		return  &instance;
 	}
 
-	virtual void UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, const vec3& cameraPosition, const Material& material);
+	virtual void UpdateUniforms(const mat4& modelMatrix, const Material& material);
 	
 	inline static void SetAmbientLight(const AmbientLight& ambientLight){ m_ambientLight = ambientLight; }
 

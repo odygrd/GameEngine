@@ -1,8 +1,6 @@
 #include "phongshader.h"
 #include <GLM\gtc\matrix_inverse.hpp>
-
 #include "../rendering/texture.h"
-#include "../core/common.h"
 
 static BYTE whitePixel[] = { 0xFF, 0xFF, 0xFF, 0xFF };
 
@@ -25,8 +23,9 @@ PhongShader::~PhongShader()
 {
 }
 
-void PhongShader::UpdateUniforms(const mat4& modelViewMatrix, const mat4& projectionMatrix, const vec3& cameraPosition,const Material& material)
+void PhongShader::UpdateUniforms(const mat4& modelMatrix, const Material& material)
 {
+	mat4 MVP = GetRenderEngine()->GetCamera()->GetProjectionMatrix() * GetRenderEngine()->GetCamera()->GetViewMatrix() * modelMatrix;
 	static Texture WHITE = Texture(1, 1, whitePixel);
 
 	if (material.GetTexture() != NULL)
@@ -36,9 +35,9 @@ void PhongShader::UpdateUniforms(const mat4& modelViewMatrix, const mat4& projec
 		WHITE.Bind(0);
 	}
 
-	SetUniform("MVP", projectionMatrix);
-	SetUniform("ModelViewMatrix", modelViewMatrix);
-	SetUniform("NormalMatrix", glm::inverseTranspose(mat3(modelViewMatrix))); 
+	SetUniform("MVP", MVP);
+	SetUniform("ModelViewMatrix", modelMatrix);
+	SetUniform("NormalMatrix", glm::inverseTranspose(mat3(modelMatrix)));
 	SetUniform("basecolor", material.GetColor());
 	SetUniform("ambientLight.color", m_ambientLight.GetColor());
 	SetUniform("ambientLight.intensity", m_ambientLight.GetIntensity());
@@ -47,7 +46,7 @@ void PhongShader::UpdateUniforms(const mat4& modelViewMatrix, const mat4& projec
 	SetUniform("directionalLight.base.intensity", m_directionalLight.GetIntensity());
 	SetUniform("specularIntensity", material.GetSpecularIntensity());
 	SetUniform("specularPower", material.GetSpecularPower());
-	SetUniform("eyePosition", cameraPosition);
+	SetUniform("eyePosition", GetRenderEngine()->GetCamera()->GetPosition());
 
 	for (int i = 0; i < m_numPointLights; i++)
 	{
