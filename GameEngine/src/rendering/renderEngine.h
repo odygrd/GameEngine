@@ -6,7 +6,7 @@
 #include "shader.h"
 #include "camera.h"
 #include "lighting.h"
-
+#include <memory>
 
 class RenderEngine
 {
@@ -23,12 +23,19 @@ public:
 
 	inline Camera* GetCamera(){ return mainCamera; }
 
+	inline const vec3& GetAmbientLight(){ return m_ambientLight; }
+	inline const DirectionalLight& GetDirectionalLight(){ return m_directionalLight; }
 private:
 	Camera* mainCamera;
-	Shader* m_shader;
+	Shader* m_forwardAmbient;
+	Shader* m_forwardDirectional;
 
 	PointLight* m_pLights;
 	SpotLight* m_sLights;
+
+	vec3 m_ambientLight;
+	DirectionalLight m_directionalLight;
+	DirectionalLight m_directionalLight2;
 };
 
 #endif

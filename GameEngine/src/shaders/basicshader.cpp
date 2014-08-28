@@ -14,7 +14,7 @@ BasicShader::~BasicShader()
 {
 }
 
-void BasicShader::UpdateUniforms(const mat4& MVPMatrix, Material material)
+void BasicShader::UpdateUniforms(const mat4& modelmatrix, const Material& material)
 {
 	static Texture WHITE = Texture(1, 1, whitePixel);
 
@@ -24,7 +24,7 @@ void BasicShader::UpdateUniforms(const mat4& MVPMatrix, Material material)
 	{
 		WHITE.Bind(0);
 	}
-
-	SetUniform("MVPMatrix", MVPMatrix);
-	SetUniform("color", material.GetColor());
+	mat4 MVP = GetRenderEngine()->GetCamera()->GetProjectionMatrix() * GetRenderEngine()->GetCamera()->GetViewMatrix() * modelmatrix;
+	SetUniform("MVP", MVP);
+	SetUniform("ambientIntensity", material.GetColor());
 }

@@ -16,7 +16,7 @@ Core::Core(Window* window, RenderEngine* renderEngine, Game* game, double framer
 {
 	Time::SetDelta(m_frameTime);
 	m_game->Init();
-};
+}
 
 void Core::Start()
 {
@@ -55,11 +55,6 @@ void Core::Start()
 
 		while (unprocessedTime > m_frameTime)
 		{
-			if (m_window->GetIsCloseRequest())
-			{
-				Stop();
-			}
-
 			Input::Update();
 			m_renderEngine->Input();
 			m_game->ProcessInput((float)m_frameTime);
@@ -79,6 +74,12 @@ void Core::Start()
 		{
 			Sleep(1);
 		}
+
+		if (m_window->GetIsCloseRequest())
+		{
+			Stop();
+		}
+
 	}
 }
 
@@ -87,3 +88,10 @@ void Core::Stop()
 {
 	m_isRunning = false;
 }
+
+Core::~Core()
+{
+	//delete m_game;
+	//delete m_renderEngine;
+	//delete m_window;
+};

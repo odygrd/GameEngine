@@ -79,6 +79,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\shaders\ForwardDirectional.cpp" />
     <ClCompile Include="src\core\gameobject.cpp" />
     <ClCompile Include="src\core\core.cpp" />
     <ClCompile Include="src\Core\input.cpp" />
@@ -91,10 +92,12 @@
     <ClCompile Include="src\Rendering\texture.cpp" />
     <ClCompile Include="src\Rendering\window.cpp" />
     <ClCompile Include="src\Shaders\basicshader.cpp" />
+    <ClCompile Include="src\shaders\forwardambient.cpp" />
     <ClCompile Include="src\Shaders\phongshader.cpp" />
     <ClCompile Include="src\game\testgame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\shaders\ForwardDirectional.h" />
     <ClInclude Include="src\core\component.h" />
     <ClInclude Include="src\core\gameobject.h" />
     <ClInclude Include="src\Core\common.h" />
@@ -114,10 +117,15 @@
     <ClInclude Include="src\Rendering\texture.h" />
     <ClInclude Include="src\Rendering\window.h" />
     <ClInclude Include="src\Shaders\basicshhader.h" />
+    <ClInclude Include="src\shaders\forwardambient.h" />
     <ClInclude Include="src\Shaders\phongshader.h" />
     <ClInclude Include="src\game\testgame.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\shaders\forward.ambient.fs.glsl" />
+    <None Include="data\shaders\forward.ambient.vs.glsl" />
+    <None Include="data\shaders\forward.directional.fs.glsl" />
+    <None Include="data\shaders\forward.directional.vs.glsl" />
     <None Include="data\shaders\phongfragment.glsl" />
     <None Include="data\shaders\phongvertex.glsl" />
     <None Include="data\shaders\simplefragment.glsl" />

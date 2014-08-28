@@ -72,6 +72,12 @@
     <ClCompile Include="src\game\testgame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\shaders\forwardambient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shaders\ForwardDirectional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Meshes\cube.h">
@@ -137,6 +143,12 @@
     <ClInclude Include="src\core\component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\shaders\forwardambient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shaders\ForwardDirectional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\shaders\simplevertex.glsl">
@@ -151,5 +163,9 @@
     <None Include="data\shaders\simplefragment.glsl">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="data\shaders\forward.ambient.vs.glsl" />
+    <None Include="data\shaders\forward.ambient.fs.glsl" />
+    <None Include="data\shaders\forward.directional.fs.glsl" />
+    <None Include="data\shaders\forward.directional.vs.glsl" />
   </ItemGroup>
 </Project>

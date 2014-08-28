@@ -13,7 +13,7 @@ public:
 		return  &instance;
 	}
 
-	virtual void UpdateUniforms(const mat4& MVPMatrix, Material material);
+	virtual void UpdateUniforms(const mat4& modelmatrix,const Material& material);
 	
 private:
 	BasicShader();

@@ -9,7 +9,7 @@ class Core
 {
 public:
 	Core(Window* window, RenderEngine* renderEngine, Game* game, double framerate);
-
+	~Core();
 	void Start();
 	void Stop();
 
