@@ -57,9 +57,6 @@
     <ClCompile Include="src\Shaders\basicshader.cpp">
       <Filter>Source Files\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="src\Shaders\phongshader.cpp">
-      <Filter>Source Files\Shaders</Filter>
-    </ClCompile>
     <ClCompile Include="src\meshes\plane.cpp">
       <Filter>Source Files\Meshes</Filter>
     </ClCompile>
@@ -72,10 +69,19 @@
     <ClCompile Include="src\game\testgame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\shaders\forwardambient.cpp">
+    <ClCompile Include="src\shaders\ForwardDirectional.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\shaders\ForwardDirectional.cpp">
+    <ClCompile Include="src\shaders\ForwardPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shaders\ForwardSpot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\lighting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shaders\forwardambient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,20 +122,11 @@
     <ClInclude Include="src\Rendering\camera.h">
       <Filter>Source Files\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="src\Rendering\lighting.h">
-      <Filter>Source Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shaders\basicshhader.h">
-      <Filter>Source Files\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="src\meshes\plane.h">
       <Filter>Source Files\Meshes</Filter>
     </ClInclude>
     <ClInclude Include="src\core\core.h">
       <Filter>Source Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shaders\phongshader.h">
-      <Filter>Source Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="src\core\gameobject.h">
       <Filter>Header Files</Filter>
@@ -137,35 +134,45 @@
     <ClInclude Include="src\game\testgame.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\meshrenderer.h">
+    <ClInclude Include="src\shaders\ForwardDirectional.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\component.h">
+    <ClInclude Include="src\shaders\ForwardPoint.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shaders\ForwardSpot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\meshrenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\lighting.h">
+      <Filter>Source Files\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="src\shaders\forwardambient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\shaders\ForwardDirectional.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Shaders\basicshader.h">
+      <Filter>Source Files\Shaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\shaders\simplevertex.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="data\shaders\phongfragment.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="data\shaders\phongvertex.glsl">
-      <Filter>Shaders</Filter>
-    </None>
     <None Include="data\shaders\simplefragment.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="data\shaders\forward.ambient.vs.glsl" />
-    <None Include="data\shaders\forward.ambient.fs.glsl" />
-    <None Include="data\shaders\forward.directional.fs.glsl" />
-    <None Include="data\shaders\forward.directional.vs.glsl" />
+    <None Include="data\shaders\multipass\multipass-ambient.fs.glsl" />
+    <None Include="data\shaders\multipass\multipass-ambient.vs.glsl" />
+    <None Include="data\shaders\multipass\multipass-directional.fs.glsl" />
+    <None Include="data\shaders\multipass\multipass-directional.vs.glsl" />
+    <None Include="data\shaders\multipass\multipass-point.fs.glsl" />
+    <None Include="data\shaders\multipass\multipass-point.vs.glsl" />
+    <None Include="data\shaders\multipass\multipass-spotlight.fs.glsl" />
+    <None Include="data\shaders\multipass\multipass-spotlight.vs.glsl" />
   </ItemGroup>
 </Project>

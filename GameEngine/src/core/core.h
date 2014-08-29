@@ -1,9 +1,9 @@
 #ifndef CORE_H
 #define CORE_H
 
-#include "..\rendering\window.h"
-#include "..\rendering\renderEngine.h"
-#include "game.h"
+class RenderEngine;
+class Window;
+class Game;
 
 class Core
 {

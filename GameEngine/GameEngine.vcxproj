@@ -79,6 +79,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\shaders\forwardambient.cpp" />
+    <ClCompile Include="src\components\lighting.cpp" />
+    <ClCompile Include="src\shaders\ForwardSpot.cpp" />
+    <ClCompile Include="src\shaders\ForwardPoint.cpp" />
     <ClCompile Include="src\shaders\ForwardDirectional.cpp" />
     <ClCompile Include="src\core\gameobject.cpp" />
     <ClCompile Include="src\core\core.cpp" />
@@ -92,42 +96,43 @@
     <ClCompile Include="src\Rendering\texture.cpp" />
     <ClCompile Include="src\Rendering\window.cpp" />
     <ClCompile Include="src\Shaders\basicshader.cpp" />
-    <ClCompile Include="src\shaders\forwardambient.cpp" />
-    <ClCompile Include="src\Shaders\phongshader.cpp" />
     <ClCompile Include="src\game\testgame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\shaders\forwardambient.h" />
+    <ClInclude Include="src\shaders\ForwardSpot.h" />
+    <ClInclude Include="src\shaders\ForwardPoint.h" />
     <ClInclude Include="src\shaders\ForwardDirectional.h" />
-    <ClInclude Include="src\core\component.h" />
+    <ClInclude Include="src\components\component.h" />
     <ClInclude Include="src\core\gameobject.h" />
     <ClInclude Include="src\Core\common.h" />
     <ClInclude Include="src\core\core.h" />
     <ClInclude Include="src\Core\game.h" />
     <ClInclude Include="src\Core\input.h" />
     <ClInclude Include="src\Core\transform.h" />
-    <ClInclude Include="src\game\meshrenderer.h" />
+    <ClInclude Include="src\components\meshrenderer.h" />
     <ClInclude Include="src\Meshes\cube.h" />
     <ClInclude Include="src\meshes\plane.h" />
     <ClInclude Include="src\Rendering\camera.h" />
-    <ClInclude Include="src\Rendering\lighting.h" />
+    <ClInclude Include="src\components\lighting.h" />
     <ClInclude Include="src\Rendering\material.h" />
     <ClInclude Include="src\Rendering\mesh.h" />
     <ClInclude Include="src\Rendering\renderEngine.h" />
     <ClInclude Include="src\Rendering\shader.h" />
     <ClInclude Include="src\Rendering\texture.h" />
     <ClInclude Include="src\Rendering\window.h" />
-    <ClInclude Include="src\Shaders\basicshhader.h" />
-    <ClInclude Include="src\shaders\forwardambient.h" />
-    <ClInclude Include="src\Shaders\phongshader.h" />
+    <ClInclude Include="src\Shaders\basicshader.h" />
     <ClInclude Include="src\game\testgame.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\shaders\forward.ambient.fs.glsl" />
-    <None Include="data\shaders\forward.ambient.vs.glsl" />
-    <None Include="data\shaders\forward.directional.fs.glsl" />
-    <None Include="data\shaders\forward.directional.vs.glsl" />
-    <None Include="data\shaders\phongfragment.glsl" />
-    <None Include="data\shaders\phongvertex.glsl" />
+    <None Include="data\shaders\multipass\multipass-ambient.fs.glsl" />
+    <None Include="data\shaders\multipass\multipass-ambient.vs.glsl" />
+    <None Include="data\shaders\multipass\multipass-directional.fs.glsl" />
+    <None Include="data\shaders\multipass\multipass-directional.vs.glsl" />
+    <None Include="data\shaders\multipass\multipass-point.fs.glsl" />
+    <None Include="data\shaders\multipass\multipass-point.vs.glsl" />
+    <None Include="data\shaders\multipass\multipass-spotlight.fs.glsl" />
+    <None Include="data\shaders\multipass\multipass-spotlight.vs.glsl" />
     <None Include="data\shaders\simplefragment.glsl" />
     <None Include="data\shaders\simplevertex.glsl" />
   </ItemGroup>

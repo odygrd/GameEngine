@@ -35,4 +35,15 @@ public:
 private:
 	static double m_delta;
 };
+
+class Color
+{
+public:
+	Color():m_color(vec3(0.0f,0.0f,0.0f)){}
+	Color(float r, float g, float b):m_color(vec3(r,g,b)){}
+	inline const vec3& GetColor() const { return m_color; }
+	inline void SetColor(float r, float g, float b){ m_color = vec3(r, g, b); }
+private:
+	vec3 m_color;
+};
 #endif

@@ -1,9 +1,13 @@
 #include <cstdio>
 #include <Windows.h>
 
+#include "../rendering/window.h"
 #include "core.h"
 #include "common.h"
 #include "input.h"
+#include "game.h"
+#include "../rendering/renderEngine.h"
+
 
 double Time::m_delta;
 

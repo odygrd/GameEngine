@@ -1,12 +1,12 @@
 #ifndef SHADER_H
 #define SHADER_H
-#include <GL\glew.h>
+#include <GL/glew.h>
 
-#include <string>
-#include <vector>
-#include <memory>
 #include <unordered_map>
-#include "renderEngine.h"
+#include "../core/common.h"
+#include <memory>
+
+class RenderEngine;
 
 class Material;
 
@@ -36,6 +36,7 @@ public:
 	void SetUniform(const std::string& name, int val);
 	void SetUniform(const std::string& name, GLuint val);
 	void SetUniform(const std::string& name, bool val);
+	void SetUniform(const std::string& name, const Color& c);
 
 	inline void SetRenderEngine(RenderEngine* renderEngine){ m_renderEngine = renderEngine; };
 	inline RenderEngine* GetRenderEngine(){ return m_renderEngine; };

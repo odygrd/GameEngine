@@ -1,12 +1,16 @@
+#pragma once
 #ifndef RENDERENGINE_H
 #define RENDERENGINE_H
 
-#include <GL\glew.h>
-#include "..\core\gameobject.h"
-#include "shader.h"
-#include "camera.h"
-#include "lighting.h"
-#include <memory>
+#include <GL/glew.h>
+#include "../core/common.h"
+#include <vector>
+
+class GameObject;
+class Shader;
+class Camera;
+class AmbientLight;
+class BaseLight;
 
 class RenderEngine
 {
@@ -16,26 +20,25 @@ public:
 	void Render(GameObject* gameobject);
 
 	void ClearScreen();
-	inline const char* GetOpenGLVersion() { return (char*)glGetString(GL_VERSION); }
-	inline const char* GetRenderer() { return (char*)glGetString(GL_RENDERER); }
+	inline const char* GetOpenGLVersion() { return reinterpret_cast<char*> (const_cast<unsigned char*>(glGetString(GL_VERSION))); }
+	inline const char* GetRenderer() { return reinterpret_cast<char*> (const_cast<unsigned char*>(glGetString(GL_RENDERER))); }
 
-	inline void Input() { mainCamera->Input(); }
+	void Input();
 
 	inline Camera* GetCamera(){ return mainCamera; }
 
-	inline const vec3& GetAmbientLight(){ return m_ambientLight; }
-	inline const DirectionalLight& GetDirectionalLight(){ return m_directionalLight; }
+	inline const AmbientLight* GetAmbientLight(){ return m_ambientLight; }
+
+	inline void AddLight(BaseLight* light){ m_lights.push_back(light); }
+	inline BaseLight* GetActiveLight() { return m_activeLight; }
 private:
 	Camera* mainCamera;
 	Shader* m_forwardAmbient;
-	Shader* m_forwardDirectional;
 
-	PointLight* m_pLights;
-	SpotLight* m_sLights;
+	AmbientLight* m_ambientLight;
 
-	vec3 m_ambientLight;
-	DirectionalLight m_directionalLight;
-	DirectionalLight m_directionalLight2;
+	std::vector<BaseLight*> m_lights;
+	BaseLight* m_activeLight;
 };
 
 #endif

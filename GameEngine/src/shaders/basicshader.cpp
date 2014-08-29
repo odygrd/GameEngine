@@ -1,5 +1,8 @@
-#include "basicshhader.h"
+#include "basicshader.h"
 #include "../rendering/texture.h"
+#include "../rendering/camera.h"
+#include "../rendering/renderEngine.h"
+#include "../rendering/material.h"
 
 static BYTE whitePixel[] = { 0xFF, 0xFF, 0xFF, 0xFF };
 

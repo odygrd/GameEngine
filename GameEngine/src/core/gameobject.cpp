@@ -1,5 +1,5 @@
 #include "gameobject.h"
-#include "component.h"
+#include "../components/component.h"
 
 GameObject* GameObject::AddChild(GameObject* child)
 {
@@ -20,44 +20,58 @@ void GameObject::InputAll(float delta)
 {
 	Input(delta);
 
-	for (unsigned int i = 0; i < m_children.size(); i++)
-		m_children[i]->InputAll(delta);
+	for (auto child : m_children)
+		child->InputAll(delta);
 }
 
 void GameObject::UpdateAll(float delta)
 {
 	Update(delta);
 
-	for (unsigned int i = 0; i < m_children.size(); i++)
-		m_children[i]->UpdateAll(delta);
+	for (auto child : m_children)
+		child->UpdateAll(delta);
 }
 
 void GameObject::RenderAll(Shader* shader, RenderEngine* renderingEngine)
 {
 	Render(shader, renderingEngine);
 
-	for (unsigned int i = 0; i < m_children.size(); i++)
-		m_children[i]->RenderAll(shader, renderingEngine);
+	for (auto child : m_children)
+		child->RenderAll(shader, renderingEngine);
+}
+
+void GameObject::AddToRenderingEngine(RenderEngine* renderEngine)
+{
+	for (auto componnent : m_components)
+	{
+		componnent->AddToRenderingEngine(renderEngine);
+	}
+	for (auto child : m_children)
+	{
+
+		child->AddToRenderingEngine(renderEngine);
+	}
+
 }
 
 void GameObject::Input(float delta)
 {
 	//m_transform.Update();
 
-	for (unsigned int i = 0; i < m_components.size(); i++)
-		m_components[i]->Input(delta);
+	for (auto componnent : m_components)
+		componnent->Input(delta);
 }
 
 void GameObject::Update(float delta)
 {
-	for (unsigned int i = 0; i < m_components.size(); i++)
-		m_components[i]->Update(delta);
+	for (auto componnent : m_components)
+		componnent->Update(delta);
 }
 
 void GameObject::Render(Shader* shader, RenderEngine* renderingEngine)
 {
-	for (unsigned int i = 0; i < m_components.size(); i++)
-		m_components[i]->Render(shader, renderingEngine);
+	for (auto componnent : m_components)
+		componnent->Render(shader, renderingEngine);
 }
 
 void GameObject::SetEngine(Core* engine)
@@ -66,11 +80,11 @@ void GameObject::SetEngine(Core* engine)
 	{
 		m_coreEngine = engine;
 
-		for (unsigned int i = 0; i < m_components.size(); i++)
-			m_components[i]->AddToEngine(engine);
+		for (auto componnent : m_components)
+			componnent->AddToEngine(engine);
 
-		for (unsigned int i = 0; i < m_children.size(); i++)
-			m_children[i]->SetEngine(engine);
+		for (auto child : m_children)
+			child->SetEngine(engine);
 	}
 }
 
@@ -78,9 +92,9 @@ std::vector<GameObject*> GameObject::GetAllAttached()
 {
 	std::vector<GameObject*> result;
 
-	for (unsigned int i = 0; i < m_children.size(); i++)
+	for (auto child : m_children)
 	{
-		std::vector<GameObject*> childObjects = m_children[i]->GetAllAttached();
+		std::vector<GameObject*> childObjects = child->GetAllAttached();
 		result.insert(result.end(), childObjects.begin(), childObjects.end());
 	}
 
@@ -90,11 +104,11 @@ std::vector<GameObject*> GameObject::GetAllAttached()
 
 GameObject::~GameObject()
 {
-	for (unsigned int i = 0; i < m_components.size(); i++)
-		if (m_components[i])
-			delete m_components[i];
+	for (auto componnent : m_components)
+		if (componnent)
+			delete componnent;
 
-	//for (unsigned int i = 0; i < m_children.size(); i++)
-	//	if (m_children[i])
-	//		delete m_children[i];
+	//for (auto child : m_children)
+	//	if (child)
+	//		delete child;
 }

@@ -1,15 +1,18 @@
 #ifndef TESTGAME_H
 #define TESTGAME_H
 
-#include "..\core\transform.h"
-#include "..\core\gameobject.h"
-#include "meshrenderer.h"
-#include "..\core\game.h"
+#include "../core/gameobject.h"
+#include "../core/game.h"
 
 class Material;
 class Texture;
 class Cube;
 class Plane;
+class MeshRenderer;
+class Mesh;
+class DirectionalLight;
+class PointLight;
+class SpotLight;
 
 class TestGame : public Game
 {
@@ -32,6 +35,12 @@ private:
 	MeshRenderer* m_meshrender;
 	MeshRenderer* m_meshrender1;
 	//std::vector<PointLight> myvector;
+
+	GameObject dirlight;
+	DirectionalLight* dlight;
+	DirectionalLight* dlight2;
+	PointLight* pLight;
+	SpotLight* sLight;
 };
 
 #endif

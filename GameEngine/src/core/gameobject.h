@@ -12,7 +12,7 @@ class RenderEngine;
 class GameObject
 {
 public:
-	GameObject() { m_coreEngine = 0; }
+	GameObject() { m_coreEngine = nullptr; }
 	virtual ~GameObject();
 
 	GameObject* AddChild(GameObject* child);
@@ -26,6 +26,7 @@ public:
 
 	inline Transform& GetTransform() { return m_transform; }
 	void SetEngine(Core* engine);
+	void AddToRenderingEngine(RenderEngine* renderEngine);
 protected:
 private:
 	void Input(float delta);

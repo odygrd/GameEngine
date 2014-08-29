@@ -1,7 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include <GLM\gtc\matrix_transform.hpp>
+#include <GLM/gtc/matrix_transform.hpp>
 
 #include "../core/common.h"
 

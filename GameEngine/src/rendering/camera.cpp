@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <GLM\gtx\rotate_vector.hpp>
+#include <GLM/gtx/rotate_vector.hpp>
 #include "camera.h"
 #include "../core/input.h"
 
@@ -7,7 +7,7 @@ Camera::Camera(float fov, float aspect, float zNear, float zFar)
 {
 	m_projectionMatrix = glm::perspective(fov, aspect, zNear, zFar);
 
-	m_position = vec3(0.0f, 0.0f, 0.0f);
+	m_position = vec3(0.0f, 0.0f, 0.0f); 
 	m_horizontalAngle = 3.14f;
 	m_verticalAngle = 0.0f;
 	m_mouselocked = false;

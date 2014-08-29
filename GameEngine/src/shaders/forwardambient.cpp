@@ -1,12 +1,16 @@
 #include "forwardambient.h"
 #include "../rendering/texture.h"
+#include "../rendering/camera.h"
+#include "../rendering/renderEngine.h"
+#include "../rendering/material.h"
+#include "../components/lighting.h"
 
 static BYTE whitePixel[] = { 0xFF, 0xFF, 0xFF, 0xFF };
 
 ForwardAmbient::ForwardAmbient()
 {
-	AddVertexShaderFromFile("../data/shaders/forward.ambient.vs.glsl");
-	AddFragmentShaderFromFile("../data/shaders/forward.ambient.fs.glsl");
+	AddVertexShaderFromFile("../data/shaders/multipass/multipass-ambient.vs.glsl");
+	AddFragmentShaderFromFile("../data/shaders/multipass/multipass-ambient.fs.glsl");
 	LinkProgram();
 }
 
@@ -26,6 +30,6 @@ void ForwardAmbient::UpdateUniforms(const mat4& modelmatrix, const Material& mat
 	}
 	mat4 MVP = GetRenderEngine()->GetCamera()->GetProjectionMatrix() * GetRenderEngine()->GetCamera()->GetViewMatrix() * modelmatrix;
 	SetUniform("MVP", MVP);
-	SetUniform("ambientIntensity", GetRenderEngine()->GetAmbientLight());
+	SetUniform("ambientColor",GetRenderEngine()->GetAmbientLight()->GetColor());
 	SetUniform("sampler", 0);
 }

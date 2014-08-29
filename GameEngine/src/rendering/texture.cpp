@@ -1,4 +1,3 @@
-#include <FREEIMAGE\FreeImage.h>
 #include "texture.h"
 
 using namespace std;

@@ -2,7 +2,8 @@
 #define FORWARDDIRECTIONAL_H
 
 #include "../rendering/shader.h"
-#include "../rendering/material.h"
+
+class Material;
 
 class ForwardDirectional : public Shader
 {
@@ -13,7 +14,7 @@ public:
 		return  &instance;
 	}
 
-	virtual void UpdateUniforms(const mat4& modelmatrix, const Material& material);
+	virtual void UpdateUniforms(const mat4& modelmatrix, const Material& material) override;
 
 private:
 	ForwardDirectional();

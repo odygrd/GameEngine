@@ -1,6 +1,8 @@
 #include <fstream>
 #include <iostream>
+#include <vector>
 #include "shader.h"
+#include <string>
 
 using namespace std;
 
@@ -153,6 +155,11 @@ void Shader::SetUniform(const std::string& name, bool val)
 {
   int loc = GetUniformLocation(name);
   glUniform1i(loc, val);
+}
+
+void Shader::SetUniform(const std::string& name, const Color& c)
+{
+	this->SetUniform(name, c.GetColor().x, c.GetColor().y, c.GetColor().z);
 }
 
 void Shader::CheckShaderError(int shader, int flag, bool isProgram)
